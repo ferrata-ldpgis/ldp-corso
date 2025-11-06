@@ -2,56 +2,23 @@
 :root {
     --column-gap: 1rem;
     --products-columns: 3;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: sans-serif;
-}
-
-/* CSS LAYOUT UTILITIES */
-.boxed {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.flex-container {
-    display: flex;
-}
-
-.justify-content-center {
-    justify-content: center;
-}
-.justify-content-between {
-    justify-content: space-between;
-}
-.align-items-center {
-    align-items: center;
-}
-
-.flex-wrap {
-    flex-wrap: wrap;
-}
-.padded-container-small {
-    padding: 0.5rem 0;
-}
-.padded-container-big {
-    padding: 2rem 0;
+    --navbar-height: 3.5rem;
 }
 
 /* LAYOUT BLOCKS */
 header {
     background: orange;
     color: white;
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+    height: var(--navbar-height);
+    /* logo (2.5rem) + padding.y (1rem) */
 }
 
 #header-logo {
-    width: 12rem;
+    /* width: 12rem; */
+    height: 2.5rem;
 }
 
 .header-column {
@@ -63,6 +30,7 @@ header {
 }
 
 main {
+    padding-top: var(--navbar-height);
     background-color: #333;
 }
 
@@ -72,7 +40,6 @@ main {
 
 .card {
     background-color: white;
-    width: calc(33.3333% - 2rem / 3);
     border-radius: 0.5rem;
     /* overflow evita che il contenuto, se più grande del contenitore, fuoriesca
     in questo caso usato per evitare che l'immagine rettangolare fuoriesca dai bordi stondati */
@@ -106,20 +73,49 @@ main {
     /* es. 5: gap e numero di colonne dinamico su variabili.
     cambiando solo le due variabili in alto, tutto il layout si adatta
     
-    width: calc( 100% / var(--products-columns) - var(--column-gap) * (var(--products-columns) - 1) / var(--products-columns) );
     */
+    width: calc(100% / var(--products-columns) - var(--column-gap) * (var(--products-columns) - 1) / var(--products-columns));
     min-height: 200px;
+}
+
+.card-image-wrapper {
+    position: relative;
 }
 
 .card-image {
     width: 100%;
 }
 
+.card-label {
+    position: absolute;
+    color: white;
+    background: darkgray;
+    padding: 0.3rem;
+    top: 0;
+    left: 0;
+}
+
+.card-label-green {
+    background: green;
+    top: 30px;
+    left: unset;
+    right: 0;
+}
+.card-label-red {
+    background: crimson;
+    top: unset;
+    bottom: 30px;
+    left: 0;
+}
+
 .card-text {
     padding: 0.5rem;
+    height: 3.3rem;
+    overflow: auto;
 }
 
 footer {
+    padding: 0.5rem 0;
     background: gray;
     color: white;
 }

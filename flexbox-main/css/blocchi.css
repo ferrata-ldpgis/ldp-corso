@@ -1,0 +1,38 @@
+header {
+    background: orangered;
+    color: white;
+    padding: 1rem;
+}
+
+.column {
+    padding: 1rem;
+}
+
+.w-20 {
+    width: 20%;
+}
+
+.w-40 {
+    width: 40%;
+}
+
+.w-60 {
+    width: 60%;
+}
+
+.scrolled {
+    max-height: 25rem;
+    overflow: auto;
+}
+
+.bg-blue-1 { background: lightcyan; }
+.bg-blue-2 { background: lightskyblue; }
+.bg-blue-3 { background: slateblue; }
+.bg-green-1 { background: lightgreen; }
+.bg-green-2 { background: lightseagreen; }
+
+footer {
+    background: orange;
+    color: white;
+    padding: 1rem;
+}
