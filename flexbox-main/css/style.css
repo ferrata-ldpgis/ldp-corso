@@ -1,0 +1,125 @@
+/* CSS GENERAL UTILIES */
+:root {
+    --column-gap: 1rem;
+    --products-columns: 3;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+}
+
+/* CSS LAYOUT UTILITIES */
+.boxed {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.flex-container {
+    display: flex;
+}
+
+.justify-content-center {
+    justify-content: center;
+}
+.justify-content-between {
+    justify-content: space-between;
+}
+.align-items-center {
+    align-items: center;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+.padded-container-small {
+    padding: 0.5rem 0;
+}
+.padded-container-big {
+    padding: 2rem 0;
+}
+
+/* LAYOUT BLOCKS */
+header {
+    background: orange;
+    color: white;
+}
+
+#header-logo {
+    width: 12rem;
+}
+
+.header-column {
+    width: 30%;
+}
+
+.header-column-user {
+    text-align: right;
+}
+
+main {
+    background-color: #333;
+}
+
+#products-container {
+    gap: var(--column-gap);
+}
+
+.card {
+    background-color: white;
+    width: calc(33.3333% - 2rem / 3);
+    border-radius: 0.5rem;
+    /* overflow evita che il contenuto, se più grande del contenitore, fuoriesca
+    in questo caso usato per evitare che l'immagine rettangolare fuoriesca dai bordi stondati */
+    overflow: hidden;
+
+    /* es. 1
+    area utilizzabile = 100% - spazio di gap
+    divido area utilizzabile per le 3 colonne
+    ricavo la larghezza di singola colonna
+    
+    width: calc((100% - 2rem) / 3);
+    */
+
+    /* es. 2
+    gap su una colonna = 2rem (totali) / 3 (colonne)
+    larghezza colonna = 33.333% - gap di una colonna
+    
+    width: calc(33.3333% - 2rem / 3);
+    */
+
+    /* es. 3: gap dinamico su variabile
+
+    width: calc(33.33333% - var(--column-gap) * 2 / 3);
+    */
+
+    /* es. 4: gap fisso (2rem divisi tra le varie colonne) ma numero di colonne dinamico (in variabile)
+
+    width: calc( 100% / var(--products-columns) );
+    */
+
+    /* es. 5: gap e numero di colonne dinamico su variabili.
+    cambiando solo le due variabili in alto, tutto il layout si adatta
+    
+    width: calc( 100% / var(--products-columns) - var(--column-gap) * (var(--products-columns) - 1) / var(--products-columns) );
+    */
+    min-height: 200px;
+}
+
+.card-image {
+    width: 100%;
+}
+
+.card-text {
+    padding: 0.5rem;
+}
+
+footer {
+    background: gray;
+    color: white;
+}
