@@ -1,0 +1,58 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+body {
+  font-family: "Segoe UI", Roboto, sans-serif;
+  background: #fbfaf9;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* CSS LAYOUT UTILITIES */
+.boxed {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.flex-container {
+    /*display: flex;
+    margin: 0 auto;*/
+
+    display: flex;
+    justify-content: center;
+    /*align-items: flex-start;*/
+    align-items: stretch;
+    flex-wrap: wrap;
+    gap: 0rem;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 ;
+    }
+
+.justify-content-center {
+    justify-content: center;
+}
+
+.justify-content-between {
+    justify-content: space-between;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+.padded-container-small {
+    padding: 0.5rem 0;
+}
+
+.padded-container-big {
+    padding: 2rem 0;
+}
