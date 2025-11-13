@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Biglietto Treno</title>
+	<style>*{box-sizing:border-box;margin:0;padding:0;}body{background:#222;color:#FFF;font-family:sans-serif;padding:1rem;}</style>
+</head>
+<body>
+	<h2>Biglietto treno</h2>
+	<form id="biglietto"></form>
+
+    <label for="percorso">km:</label>
+    <input type="text" id="percorso" name="percorso" placeholder="Inserisci i km:">
+
+	<label for="categoria">Seleziona una categoria:</label>
+    <select id="categoria" name="categoria" >
+      <option value="">-- Seleziona --</option>
+      <option value="Minorenne">Minorenne</option>
+      <option value="Maggiorenne">Maggiorenne</option>
+      <option value="Over65">Over 65</option>
+    </select>
+
+	<button id="invia">Calcola</button>
+
+	<br/>
+	<br/>
+	<label for="costo">Costo:</label>
+    <input type="text" id="costo" name="costo">
+
+	<p id="results" style="margin-top: 10px; font-weight: bold;"></p>
+  </form>
+	
+  <script src="./js/main.js"></script>
+  <script src="./js/functions.js"></script>
+</body>
+</html>
