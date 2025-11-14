@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Lista spesa:</title>
+	<style>*{box-sizing:border-box;margin:0;padding:0;}body{background:#222;color:#FFF;font-family:sans-serif;padding:1rem;}</style>
+</head>
+<body>
+	<h2>Lista spesa:</h2>
+	<form id="lista_dinamica">
+    <br/>
+    <ul id="lista"></ul>
+    <br/>
+    <input type="text" id="taskInput" placeholder="Aggiungi" />
+  
+    <br/><br/>
+    <button type="submit">Aggiungi</button>
+
+
+    <br/><br/>
+    <button type="button" id="clearBtn">Cancella lista</button>
+    <br/><br/>
+    <button type="button" id="exportCSV">Esporta CSV</button>
+  </form>
+	
+  <script src="./js/main.js"></script>
+  <script src="./js/functions.js"></script>
+</body>
+</html>
