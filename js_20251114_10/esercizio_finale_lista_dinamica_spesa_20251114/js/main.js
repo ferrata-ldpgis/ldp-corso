@@ -10,14 +10,14 @@ let tasks = [
     "caffè"
 ];
 let done = [
-    true,
-    true,
-    true,
-    true,
-    true,
-    true,
-    true,
-    true
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false
 ];
 
 // Recupero del form
@@ -43,11 +43,11 @@ console.log("exportBtn", exportBtn);
 // funzione helper per applicare stile allo span in base a done booleano
 function applyStyleToSpan(span, isDone) {
     if (isDone) {
-        span.style.color = "limegreen";
-        span.style.textDecoration = "none";
-    } else {
         span.style.color = "#aaa";
         span.style.textDecoration = "line-through";
+    } else {
+        span.style.color = "white"; 
+        span.style.textDecoration = "none";
     }
 }
 
@@ -104,10 +104,10 @@ ul.addEventListener('click', function (event) {
 
     // Se è stato cliccato il bottone CHECK
     if (target.matches('button.checkBtn')) {
-        const li = target.closest('li');
-        if (!li) return;
-        const index = Array.prototype.indexOf.call(ul.children, li);
-        if (index === -1) return;
+        const li = target.closest('li');  //Cerca il primo elemento <li> che contiene quel bottone
+        if (!li) return;  //Se per qualche motivo non lo trova esce dalla funzione
+        const index = Array.prototype.indexOf.call(ul.children, li);  //Ottiene la posizione dell'elemnto <li> all’interno della lista ul
+        if (index === -1) return;  //Se l’elemento non è stato trovato tra i figli esce dalla funzione
 
         // aggiorno lo stato nell'array done
         done[index] = true;
@@ -120,10 +120,10 @@ ul.addEventListener('click', function (event) {
 
     // Se è stato cliccato il bottone X (mark as deleted)
     if (target.matches('button.deleteBtn')) {
-        const li = target.closest('li');
-        if (!li) return;
-        const index = Array.prototype.indexOf.call(ul.children, li);
-        if (index === -1) return;
+        const li = target.closest('li');  //Cerca il primo elemento <li> che contiene quel bottone
+        if (!li) return;  //Se per qualche motivo non lo trova esce dalla funzione.
+        const index = Array.prototype.indexOf.call(ul.children, li);  //Ottiene la posizione dell'elemnto <li> all’interno della lista ul
+        if (index === -1) return; ////Se l’elemento non è stato trovato tra i figli esce dalla funzione
 
         // aggiorno lo stato nell'array done
         done[index] = false;
@@ -148,15 +148,15 @@ form.addEventListener('submit', function (event) {
 
     // Aggiungo task e done (nuove task: false => grigio/barrato)
     tasks.push(newTask);
-    done.push(true);
+    done.push(false);
     console.log("tasks: ", tasks);
     console.log("done: ", done);
     input.value = "";
 
-    // Chiamo renderTasks con ritardo di 1000ms
+    // Chiamo renderTasks con ritardo di 500ms
     setTimeout(() => {
         renderTasks();
-    }, 1000); // 1000ms di ritardo
+    }, 500); // 500ms di ritardo
 });
 
 
